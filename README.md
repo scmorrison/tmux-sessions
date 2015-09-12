@@ -25,4 +25,8 @@ export PATH=$PATH:$HOME/local/tmux-sessions/scripts
 
 * [tmux-web-dev] - Start a three window session (server, vim, test) using PWD as the name of the session.
 
+# License
+
+GPLv3
+
 [tmux-web-dev]: scripts/tmux-web-dev
