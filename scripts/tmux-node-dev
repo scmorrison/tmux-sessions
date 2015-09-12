@@ -1,0 +1,18 @@
+#!/bin/bash
+# Project name is current
+# repository directory name.
+PROJECT=${PWD##*/}
+
+# Set PWD as default pauth for tmux session
+tmux set-option default-path "$PWD"
+
+# Create new session and define initial window
+tmux new-session -d -s "$PROJECT" -n 'server'
+
+# Create windows
+tmux new-window -t "$PROJECT:2" -n 'vim'
+tmux new-window -t "$PROJECT:3" -n 'test'
+tmux select-window -t "$PROJECT:1"
+
+# Attach session
+tmux -2 attach-session -t "$PROJECT"
