@@ -1,0 +1,31 @@
+#!/bin/bash
+# tmux-music: Start a two window session (pianobar, mocp) using
+# `music` as the name of the session.
+# Copyright (C) 2015 Sam Morrison
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+# Current repository directory name.
+PROJECT='music'
+
+# Create new session and define initial window, create ssh tunnel, launch pianobar
+tmux new-session -d -s "$PROJECT" -n 'pianobar' 'ssh -fN satellite && pianobar'
+
+# Create windows
+tmux new-window -t "$PROJECT:2" -n 'mocp' '/usr/bin/mocp'
+tmux select-window -t "$PROJECT:1"
+
+# Attach session
+tmux -2 attach-session -t "$PROJECT"

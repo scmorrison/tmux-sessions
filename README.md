@@ -23,8 +23,9 @@ export PATH=$PATH:$HOME/local/tmux-sessions/scripts
 
 # Scripts
 
-* [tmux-web-dev] - Start a three window session (server, vim, test) using PWD as the name of the session.
 * [tmux-command-center] - Start a three window session (system, tools, misc) using PWD as the name of the session.
+* [tmux-web-dev] - Start a three window session (server, vim, test) using PWD as the name of the session.
+* [tmux-music] - Start a two window session (pianobar, mocp) using `music` as the name of the session. Create an ssh tunnel before launching `pianobar`. Launch `mocp` in the mocp window.
 
 # License
 
