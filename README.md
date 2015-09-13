@@ -31,4 +31,6 @@ export PATH=$PATH:$HOME/local/tmux-sessions/scripts
 
 GPLv3
 
+[tmux-command-center]: scripts/tmux-command-center
 [tmux-web-dev]: scripts/tmux-web-dev
+[tmux-music]: scripts/tmux-music
