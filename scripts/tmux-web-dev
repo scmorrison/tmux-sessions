@@ -17,8 +17,9 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# Current repository directory name.
-PROJECT=${PWD##*/}
+# Current repository directory name, clean up string
+# tmux session names can't include (.) periods.
+PROJECT=$(sed -e's/\.//;' <<< ${PWD##/*/});
 
 # Set PWD as default pauth for tmux session
 tmux set-option default-path "$PWD"
