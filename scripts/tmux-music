@@ -21,7 +21,7 @@
 PROJECT='music'
 
 # Create new session and define initial window, create ssh tunnel, launch pianobar
-tmux new-session -d -s "$PROJECT" -n 'pianobar' 'ssh -fN satellite && pianobar'
+tmux new-session -d -s "$PROJECT" -n 'pianobar' 'ssh -fN satellite && ~/local/pianobar/pianobar'
 
 # Create windows
 tmux new-window -t "$PROJECT:2" -n 'mocp' '/usr/bin/mocp'
